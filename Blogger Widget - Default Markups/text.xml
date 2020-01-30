@@ -1,0 +1,8 @@
+<b:widget id='Text1' locked='false' title='Text' type='Text' visible='true'>
+  <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <div class='widget-content'>
+      <data:content/>
+    </div>
+  </b:includable>
+</b:widget>
