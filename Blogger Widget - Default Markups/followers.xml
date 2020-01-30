@@ -1,0 +1,17 @@
+<b:widget id='Followers1' locked='false' title='Followers' type='Followers' visible='true'>
+  <b:includable id='main'>
+    <b:if cond='data:title != &quot;&quot; and data:codeSnippet != &quot;&quot;'>
+      <h2 class='title'><data:title/></h2>
+    </b:if>
+    <div class='widget-content'>
+      <div expr:id='data:widget.instanceId + &quot;-wrapper&quot;'>
+        <b:if cond='data:codeSnippet != &quot;&quot;'>
+          <div style='margin-right:2px;'>
+            <data:codeSnippet/>
+          </div>
+        </b:if>
+      </div>
+      <b:include name='quickedit'/>
+    </div>
+  </b:includable>
+</b:widget>
