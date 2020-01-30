@@ -1,0 +1,54 @@
+<b:widget id='Subscribe1' locked='false' title='Subscription Link' type='Subscribe' visible='true'>
+  <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='widget-content'>
+      <b:include data='feeds' name='feeds'/>
+      <div style='clear:both'/>
+    </div>
+  </b:includable>
+  <b:includable id='feeds' var='feeds'>
+    <b:loop values='data:feeds' var='feed'>
+      <div expr:class='&quot;subscribe-wrapper subscribe-type-&quot; + data:feed.type'>
+        <div expr:class='&quot;subscribe expanded subscribe-type-&quot; + data:feed.type' expr:id='&quot;SW_READER_LIST_&quot; + data:widgetId + data:feed.type' style='display:none;'>
+          <div class='top'>
+            <span class='inner' expr:onclick='&quot;return(_SW_toggleReaderList(event, \&quot;&quot; + data:widgetId +data:feed.type + &quot;\&quot;));&quot;'>
+              <img class='subscribe-dropdown-arrow' expr:src='data:arrowDropdownImg'/>
+              <img align='absmiddle' alt='' border='0' class='feed-icon' expr:src='data:feedIconImg'/>
+              <data:feed.title/>
+            </span>
+
+            <div class='feed-reader-links'>
+              <a class='feed-reader-link' expr:href='&quot;https://www.netvibes.com/subscribe.php?url=&quot; + data:feed.encodedUrl' target='_blank'>
+                <img expr:src='data:imagePathBase + &quot;subscribe-netvibes.png&quot;'/>
+              </a>
+              <a class='feed-reader-link' expr:href='&quot;https://add.my.yahoo.com/content?url=&quot; + data:feed.encodedUrl' target='_blank'>
+                <img expr:src='data:imagePathBase + &quot;subscribe-yahoo.png&quot;'/>
+              </a>
+              <a class='feed-reader-link' expr:href='data:feed.url' target='_blank'>
+                <img align='absmiddle' class='feed-icon' expr:src='data:feedIconImg'/>
+                Atom
+              </a>
+            </div>
+          </div>
+          <div class='bottom'/>
+        </div>
+
+        <div class='subscribe' expr:id='&quot;SW_READER_LIST_CLOSED_&quot; + data:widgetId +data:feed.type' expr:onclick='&quot;return(_SW_toggleReaderList(event, \&quot;&quot; + data:widgetId +data:feed.type + &quot;\&quot;));&quot;'>
+          <div class='top'>
+           <span class='inner'>
+             <img class='subscribe-dropdown-arrow' expr:src='data:arrowDropdownImg'/>
+             <span expr:onclick='&quot;return(_SW_toggleReaderList(event, \&quot;&quot; + data:widgetId +data:feed.type + &quot;\&quot;));&quot;'>
+               <img align='absmiddle' alt='' border='0' class='feed-icon' expr:src='data:feedIconImg'/>
+               <data:feed.title/>
+             </span>
+           </span>
+         </div>
+         <div class='bottom'/>
+       </div>
+     </div>
+   </b:loop>
+ </b:includable>
+</b:widget>
