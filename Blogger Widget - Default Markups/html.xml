@@ -1,0 +1,11 @@
+<b:widget id='HTML1' locked='false' title='HTML/JavaScript' type='HTML' visible='true'>
+  <b:widget-settings>
+    <b:widget-setting name='content'/>
+  </b:widget-settings>
+  <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <div class='widget-content'>
+      <data:content/>
+    </div>
+  </b:includable>
+</b:widget>
