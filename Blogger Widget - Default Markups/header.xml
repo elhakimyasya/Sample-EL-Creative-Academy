@@ -1,0 +1,37 @@
+<b:widget id='Header2' locked='false' title='Page Header (Header)' type='Header' visible='true'>
+  <b:includable id='main' var='this'>
+    <div class='header-widget'>
+      <b:include cond='data:imagePlacement in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}' name='image'/>
+      <b:include cond='data:imagePlacement not in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}' name='title'/>
+      <b:include cond='data:imagePlacement != &quot;REPLACE&quot;' name='description'/>
+    </div>
+    <b:include cond='data:imagePlacement == &quot;BEHIND&quot;' name='behindImageStyle'/>
+  </b:includable>
+  <b:includable id='behindImageStyle'>
+    <b:if cond='data:sourceUrl'>
+      <b:include cond='data:this.image' data='{                    image: data:this.image,                    selector: &quot;.header-widget&quot;                  }' name='responsiveImageStyle'/>
+      <style type='text/css'>
+        .header-widget {
+        background-position: <data:blog.locale.languageAlignment/>;
+        background-repeat: no-repeat;
+        }
+      </style>
+    </b:if>
+  </b:includable>
+  <b:includable id='description'>
+    <p>
+      <data:this.description/>
+    </p>
+  </b:includable>
+  <b:includable id='image'>
+    <b:include name='super.image'/>
+    <b:comment>If we are replacing the title, force it to render anyway, and it&#39;ll be hidden in CSS.</b:comment>
+    <b:include cond='data:this.imagePlacement == &quot;REPLACE&quot;' name='title'/>
+  </b:includable>
+  <b:includable id='title'>
+    <div>
+      <b:class cond='data:this.imagePlacement == &quot;REPLACE&quot;' name='replaced'/>
+      <b:include name='super.title'/>
+    </div>
+  </b:includable>
+</b:widget>
