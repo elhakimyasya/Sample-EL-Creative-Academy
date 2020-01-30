@@ -1,0 +1,33 @@
+<b:widget id='ContactForm1' locked='false' title='Formulir Kontak' type='ContactForm' visible='true'>
+  <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='contact-form-widget'>
+      <div class='form'>
+        <form name='contact-form'>
+          <p />
+          <data:contactFormNameMsg/>
+          <br />
+          <input class='contact-form-name' expr:id='data:widget.instanceId + &quot;_contact-form-name&quot;' name='name' size='30' type='text' value=''/>
+          <p />
+          <data:contactFormEmailMsg/> <span style='font-weight: bolder;'>*</span>
+          <br />
+          <input class='contact-form-email' expr:id='data:widget.instanceId + &quot;_contact-form-email&quot;' name='email' size='30' type='text' value=''/>
+          <p />
+          <data:contactFormMessageMsg/> <span style='font-weight: bolder;'>*</span>
+          <br />
+          <textarea class='contact-form-email-message' cols='25' expr:id='data:widget.instanceId + &quot;_contact-form-email-message&quot;' name='email-message' rows='5'/>
+          <p />
+          <input class='contact-form-button contact-form-button-submit' expr:id='data:widget.instanceId + &quot;_contact-form-submit&quot;' expr:value='data:contactFormSendMsg' type='button' />
+          <p />
+          <div style='text-align: center; max-width: 222px; width: 100%'>
+            <p class='contact-form-error-message' expr:id='data:widget.instanceId + &quot;_contact-form-error-message&quot;'/>
+            <p class='contact-form-success-message' expr:id='data:widget.instanceId + &quot;_contact-form-success-message&quot;'/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </b:includable>
+</b:widget>
