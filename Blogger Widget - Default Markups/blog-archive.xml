@@ -1,0 +1,55 @@
+<b:widget id='BlogArchive1' locked='false' title='Blog Archive' type='BlogArchive' visible='true'>
+  <b:includable id='main' var='this'>
+    <details class='collapsible extendable'>
+      <b:attr cond='data:view.isArchive' name='open' value='open'/>
+      <b:with value='true' var='renderAsDetails'>
+        <b:with value='data:messages.archive' var='defaultTitle'>
+          <b:include name='super.main'/>
+        </b:with>
+      </b:with>
+    </details>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='widget-content'>
+      <div id='ArchiveList'>
+        <div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
+          <b:include cond='data:this.style == &quot;HIERARCHY&quot;' name='hierarchy'/>
+          <b:include cond='data:this.style in {&quot;FLAT&quot;, &quot;MENU&quot;}' name='flat'/>
+        </div>
+      </div>
+    </div>
+  </b:includable>
+  <b:includable id='flat'>
+    <b:include data='{      buttonClass: &quot;pill-button&quot;,      items: data:this.data,      itemSet: &quot;data&quot;,      itemsMarkup: &quot;super.flat&quot;    }' name='extendableItems'/>
+  </b:includable>
+  <b:includable id='hierarchy'>
+    <b:include data='{      buttonClass: &quot;pill-button&quot;,      limit: 1,      items: data:this.data,      itemSet: &quot;data&quot;,      itemsMarkup: &quot;super.hierarchy&quot;    }' name='extendableItems'/>
+  </b:includable>
+  <b:includable id='interval' var='intervals'>
+    <ul class='hierarchy'>
+      <b:loop values='data:intervals' var='interval'>
+        <li class='archivedate'>
+          <div class='hierarchy-title'>
+            <a class='post-count-link' expr:href='data:interval.url'>
+              <data:interval.name/>
+              <span class='post-count'><data:interval.post-count/></span>
+            </a>
+          </div>
+          <div class='hierarchy-content'>
+            <b:include cond='data:interval.data' data='interval.data' name='interval'/>
+            <b:include cond='data:interval.posts' data='interval.posts' name='posts'/>
+          </div>
+        </li>
+      </b:loop>
+    </ul>
+  </b:includable>
+  <b:includable id='posts' var='posts'>
+    <ul class='posts hierarchy'>
+      <b:loop values='data:posts' var='post'>
+        <li>
+          <a expr:href='data:post.url'><data:post.title/></a>
+        </li>
+      </b:loop>
+    </ul>
+  </b:includable>
+</b:widget>
