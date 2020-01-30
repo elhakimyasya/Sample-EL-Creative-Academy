@@ -1,0 +1,18 @@
+<b:widget id='FollowByEmail2' locked='false' title='Follow by Email' type='FollowByEmail' visible='true'>
+  <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='widget-content'>
+      <div class='follow-by-email-inner'>
+        <form action='https://feedburner.google.com/fb/a/mailverify' expr:onsubmit='&quot;window.open(\&quot;https://feedburner.google.com/fb/a/mailverify?uri=&quot; + data:feedPath + &quot;\&quot;, \&quot;popupwindow\&quot;, \&quot;scrollbars=yes,width=550,height=520\&quot;); return true&quot;' method='post' target='popupwindow'>
+          <input autocomplete='off' class='follow-by-email-address' expr:placeholder='data:messages.emailAddress' name='email' type='email'/>
+          <input class='follow-by-email-submit' expr:value='data:messages.getEmailNotifications' type='submit'/>
+          <input expr:value='data:feedPath' name='uri' type='hidden'/>
+          <input name='loc' type='hidden' value='en_US'/>
+        </form>
+      </div>
+    </div>
+  </b:includable>
+</b:widget>
