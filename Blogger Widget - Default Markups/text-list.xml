@@ -1,0 +1,15 @@
+<b:widget id='TextList1' locked='false' title='List' type='TextList' visible='true'>
+  <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+   <div class='widget-content'>
+     <ul>
+       <b:loop values='data:items' var='item'>
+         <li><data:item/></li>
+       </b:loop>
+     </ul>
+   </div>
+ </b:includable>
+</b:widget>
