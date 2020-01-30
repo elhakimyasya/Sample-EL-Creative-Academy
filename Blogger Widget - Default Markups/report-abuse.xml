@@ -1,0 +1,5 @@
+<b:widget id='ReportAbuse1' locked='true' title='' type='ReportAbuse' version='2' visible='true'>
+  <b:includable id='main'>
+    <b:include name='reportAbuse'/>
+  </b:includable>
+</b:widget>
