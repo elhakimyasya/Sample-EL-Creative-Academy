@@ -1,0 +1,72 @@
+<b:widget id='PopularPosts2' locked='false' title='Popular Posts' type='PopularPosts' visible='true'>
+  <b:includable id='main' var='this'>
+    <b:comment>Default the title to &#39;Popular posts from this blog&#39;.</b:comment>
+    <b:with value='data:messages.popularPostsFromThisBlog' var='defaultTitle'>
+      <b:include name='super.main'/>
+    </b:with>
+  </b:includable>
+  <b:includable id='commentsLink'>
+    <a class='comment-link' expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+      <b:include data='{ iconClass: &quot;touch-icon&quot; }' name='commentIcon'/>
+      <span class='num_comments'>
+        <b:if cond='data:post.numberOfComments &gt; 0'>
+          <b:message name='messages.numberOfComments'>
+            <b:param expr:value='data:post.numberOfComments' name='numComments'/>
+          </b:message>
+          <b:else/>
+          <data:messages.postAComment/>
+        </b:if>
+      </span>
+    </a>
+  </b:includable>
+  <b:includable id='postFooter' var='post'>
+    <div class='post-bottom'>
+      <div class='post-footer float-container'>
+        <b:include name='footerBylines'/>
+        <b:include cond='data:widget.type == &quot;Blog&quot;' data='post' name='postFooterAuthorProfile'/>
+      </div>
+      <b:if cond='data:view.isSingleItem'>
+        <b:include data='{ shareButtonClass: &quot;post-share-buttons-bottom invisible&quot;, overridden: true }' name='maybeAddShareButtons'/>
+        <b:else/>
+        <b:include data='post' name='postFooterJumpLink'/>
+      </b:if>
+    </div>
+  </b:includable>
+  <b:includable id='postFooterJumpLink'>
+    <b:comment>Ripple, and show &#39;keep reading&#39; as the default.</b:comment>
+    <div class='jump-link flat-button ripple'>
+      <a expr:href='data:post.hasJumpLink ? data:post.url fragment &quot;more&quot; : data:post.url' expr:title='data:post.title'>
+        <data:blog.jumpLinkMessage/>
+      </a>
+    </div>
+  </b:includable>
+  <b:includable id='postJumpLink'>
+    <b:comment>Overridden, and migrated to postFooter. Called as postFooterJumpLink.</b:comment>
+  </b:includable>
+  <b:includable id='postLabels'>
+    <b:comment>We don&#39;t display labels on the home page.</b:comment>
+    <b:if cond='data:view.isSingleItem and data:widget.type == &quot;Blog&quot;'>
+      <b:include name='super.postLabels'/>
+    </b:if>
+  </b:includable>
+  <b:includable id='postShareButtons' var='post'>
+    <b:comment>We call super.postShareButtons from the migrated positions.</b:comment>
+  </b:includable>
+  <b:includable id='snippetedPostByline'>
+    <b:include name='headerByline'/>
+  </b:includable>
+  <b:includable id='snippetedPostContent'>
+    <b:comment>Add a &#39;keep reading&#39; link to the item-content.</b:comment>
+    <b:include name='snippetedPostTitle'/>
+    <b:include name='snippetedPostByline'/>
+    <div class='item-content float-container'>
+      <b:include cond='data:this.postDisplay.showFeaturedImage and data:post.featuredImage' name='snippetedPostThumbnail'/>
+      <b:if cond='data:this.postDisplay.showSnippet'>
+        <b:with value='&quot;popular-posts&quot;' var='snippetPrefix'>
+          <b:include cond='data:post' data='post' name='postSnippet'/>
+        </b:with>
+      </b:if>
+      <b:include data='post' name='postFooterJumpLink'/>
+    </div>
+  </b:includable>
+</b:widget>
