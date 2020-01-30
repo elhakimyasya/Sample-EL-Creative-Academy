@@ -1,0 +1,33 @@
+<b:widget id='Wikipedia1' locked='false' title='Wikipedia' type='Wikipedia' visible='true'>
+  <b:includable id='main'>
+    <b:include name='widget-title'/>
+    <b:include name='content'/>
+  </b:includable>
+  <b:includable id='content'>
+    <div class='wikipedia-search-main-container'>
+      <form class='wikipedia-search-form' expr:id='data:widget.instanceId + &quot;_wikipedia-search-form&quot;' name='wikipedia'>
+        <div class='wikipedia-searchtable'>
+          <span>
+            <a class='wikipedia-search-wiki-link' href='https://wikipedia.org/wiki/' target='_blank'>
+              <img align='top' class='wikipedia-icon' src='https://resources.blogblog.com/img/widgets/icon_wikipedia_w.png'/>
+            </a>
+          </span>
+          <span class='wikipedia-search-bar'>
+            <span class='wikipedia-input-box'>
+              <input class='wikipedia-search-input' expr:id='data:widget.instanceId + &quot;_wikipedia-search-input&quot;' type='text'/>
+            </span>
+            <span>
+              <input class='wikipedia-search-button' type='submit'/>
+            </span>
+          </span>
+        </div>
+      </form>
+      <div class='wikipedia-search-results-header' expr:id='data:widget.instanceId + &quot;_wikipedia-search-results-header&quot;'><data:searchResultsMsg/></div>
+      <div class='wikipedia-search-results' expr:id='data:widget.instanceId + &quot;_wikipedia-search-results&quot;'/>
+      <nobr>
+        <div expr:dir='data:blog.languageDirection' expr:id='data:widget.instanceId + &quot;_wikipedia-search-more&quot;'/>
+      </nobr>
+    </div>
+    <br/>
+  </b:includable>
+</b:widget>
