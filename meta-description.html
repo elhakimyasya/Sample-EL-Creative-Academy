@@ -1,0 +1,20 @@
+<!--
+Artikel: Cara Memasang SEO Meta Tag bagi Pemula
+https://www.elcreativeacademy.com/2020/02/memasang-seo-meta-tag-bagi-pemula.html#point2
+-->
+
+<!-- HTML -->
+<meta name="description" content="Letakkan Meta Description disini.">
+
+<!-- Blogger -->
+<b:if cond="data:view.isMultipleItems">
+    <meta expr:content="data:blog.metaDescription" name="description"/>
+
+    <b:elseif cond="data:view.isSingleItem"/>
+    <b:if cond="data:blog.metaDescription">
+        <meta expr:content="data:blog.metaDescription" name="description"/>
+
+        <b:else/>
+        <meta expr:content="data:blog.pageName" name="description"/>
+    </b:if>
+</b:if>
