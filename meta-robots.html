@@ -1,0 +1,21 @@
+<!--
+Artikel: Cara Memasang SEO Meta Tag bagi Pemula
+https://www.elcreativeacademy.com/2020/02/memasang-seo-meta-tag-bagi-pemula.html
+-->
+
+<!-- HTML -->
+<meta name="robots" content="index, follow">
+
+<!-- HTML: Combined -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, follow">
+<meta name="robots" content="index, nofollow">
+
+<!-- Blogger -->
+<b:if cond='data:blog.pageType in {&quot;archive&quot;} or data:blog.searchLabel or data:blog.searchQuery'>
+    <meta content='noindex/nofollow' name='robots'/>
+
+    <b:elseif cond='data:view.isSingleItem or data:view.isHomepage'/>
+    <meta content='index/follow' name='robots'/>
+</b:if>
