@@ -1,0 +1,30 @@
+<!--
+Artikel: Cara Memasang SEO Meta Tag bagi Pemula
+https://www.elcreativeacademy.com/2020/02/memasang-seo-meta-tag-bagi-pemula.html
+-->
+
+<!-- HTML -->
+<title>Ini adalah judul halaman.</title>
+
+<!-- Blogger -->
+<b:if cond="data:view.isSingleItem">
+    <title><data:blog.pageName/></title>
+
+    <b:elseif cond="data:view.isHomepage"/>
+    <title><data:blog.title/></title>
+
+    <b:elseif cond="data:view.search.label"/>
+    <title><data:blog.pageTitle/></title>
+
+    <b:elseif cond="data:view.search.query"/>
+    <title><data:view.search.resultsMessage/></title>
+
+    <b:elseif cond="data:view.search and !data:view.search.label and !data:view.search.query"/>
+    <title><data:blog.pageTitle/></title>
+
+    <b:elseif cond="data:view.isArchive"/>
+    <title><data:view.archive.rangeMessage/></title>
+
+    <b:elseif cond="data:view.isError"/>
+    <title>404 Tidak Ditemukan</title>
+</b:if>
