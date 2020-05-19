@@ -1,0 +1,26 @@
+p {
+    padding: 10px;
+}
+
+.kotak {
+    padding: 20px;
+    width: 50%;
+    margin: 30px auto;
+    background: #000;
+    color: #fff;
+}
+
+/* offset-x | offset-y | warna */
+#kotak1 {
+    box-shadow: 6px 12px red;
+}
+
+/* offset-x | offset-y | blur-radius | spread-radius | warna */
+#kotak2 {
+    box-shadow: 6px 12px 4px 8px green;
+}
+
+/* Berapapun jumlah bayangan harus dipisahkan dengan koma */
+#kotak3 {
+    box-shadow: 6px 12px 2px 2px green, -6px -12px 2px 2px blue;
+}
