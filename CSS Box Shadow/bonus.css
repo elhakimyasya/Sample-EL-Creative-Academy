@@ -1,0 +1,7 @@
+blockquote {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    font-size: 24px;
+    box-shadow: inset 10px 5px 25px 5px black, 5px 5px 12px 2px black;
+}
