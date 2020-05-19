@@ -12,15 +12,18 @@ p {
 
 /* offset-x | offset-y | warna */
 #kotak1 {
-    box-shadow: 6px 12px red;
+    -webkit-box-shadow: 6px 12px red;
+            box-shadow: 6px 12px red;
 }
 
 /* offset-x | offset-y | blur-radius | spread-radius | warna */
 #kotak2 {
-    box-shadow: 6px 12px 4px 8px green;
+    -webkit-box-shadow: 6px 12px 4px 8px green;
+            box-shadow: 6px 12px 4px 8px green;
 }
 
 /* Berapapun jumlah bayangan harus dipisahkan dengan koma */
 #kotak3 {
-    box-shadow: 6px 12px 2px 2px green, -6px -12px 2px 2px blue;
+    -webkit-box-shadow: 6px 12px 2px 2px green, -6px -12px 2px 2px blue;
+            box-shadow: 6px 12px 2px 2px green, -6px -12px 2px 2px blue;
 }
