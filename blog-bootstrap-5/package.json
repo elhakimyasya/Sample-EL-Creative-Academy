@@ -1,0 +1,11 @@
+{
+  "name": "blog-bootstrap-5",
+  "version": "1.0.0",
+  "description": "Halaman Blog dengan Bootstrap 5 Alpha",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yasya El Hakim",
+  "license": "ISC"
+}
