@@ -26,10 +26,12 @@
           </li>
         </ul>
 
-        <form class="d-flex">
+        <form class="d-flex mr-2">
           <input class="form-control mr-2" type="search" placeholder="Pencarian" aria-label="Pencarian">
           <button class="btn btn-outline-primary" type="submit">Pencarian</button>
         </form>
+
+        <button class="btn btn-primary" id="daftarAkun">Daftar</button>
       </div>
     </div>
   </nav>
@@ -85,6 +87,37 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="modal" tabindex="-1" id="modalDaftarAkun">
+    <div class="modal-dialog">
+      <form action="#" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Daftar Akun</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="email" class="form-label">Alamat Email</label>
+            <input type="email" class="form-control" id="email" placeholder="nama@email.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" required>
+          </div>
+          <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Konfirmasi Password</label>
+            <input type="password" class="form-control" id="konfirmPassword" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+          <button type="submit" class="btn btn-primary">Daftar</button>
+        </div>
+      </form>
     </div>
   </div>
 
