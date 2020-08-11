@@ -507,3 +507,4 @@ a.elc-caption:hover {
 	}
 }
 @media screen and (max-width:460px){.elc-caption span.title{font-size:16px}.elc-caption .elc-meta{margin-bottom:5px}#my-slider .elc-slide .elc-caption{bottom:25%}}
+#my-slider ol:not(.elc-slides) {display: none;}
