@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>localStorage To-Do-List | EL Creative Academy</title>
+
+  <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <h1 class="navbar-brand"><a href="#"></a>To-Do-List</h1>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-12 col-lg-8">
+
+        <!-- Input To-Do-List -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="card-title">Input To-Do-List:</h5>
+          </div>
+          <div class="card-body">
+            <form class="mb-3">
+              <label for="inputData" class="form-label">Masukkan Data:</label>
+              <input type="text" class="form-control" id="inputData" aria-describedby="infoInputData" placeholder="Nama Item" required>
+              <div id="infoInputData" class="form-text">Ketikkan dan tekan Enter.</div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Daftar To-Do-List -->
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="card-title">Daftar To-Do-List:</h5>
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <ul>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="text-right">
+              <button class="btn btn-danger">Hapus Semua</button>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
