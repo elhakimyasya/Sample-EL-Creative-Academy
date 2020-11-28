@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal Dialog | EL Creative Academy</title>
+
+    <style>
+      dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+
+  <body>
+    <button onclick="tampilkanDialog()">Tampilkan Dialog</button>
+
+    <dialog id="kotak-dialog">
+      <p>Ini adalah Kotak Dialog</p>
+
+      <button onclick="sembunyikanDialog()">Sembunyikan Dialog</button>
+    </dialog>
+
+    <script>
+      var dialog = document.querySelector('dialog')
+      dialogPolyfill.registerDialog(dialog)
+
+      function tampilkanDialog() {
+        document.getElementById('kotak-dialog').showModal()
+      }
+
+      function sembunyikanDialog() {
+        document.getElementById('kotak-dialog').close()
+      }
+    </script>
+  </body>
+</html>
